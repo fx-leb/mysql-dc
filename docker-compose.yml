@@ -1,0 +1,13 @@
+version: '2'
+services:
+  mysql:
+    image: mysql:5.5
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+      - MYSQL_DATABASE=folios
+    ports:
+     - "3307:3306"
+    volumes:
+     - ./conf:/etc/mysql/conf.d
+     - /home/francois-xavier.lebastard/folios/mysqldata:/var/lib/mysql
+    restart: always
